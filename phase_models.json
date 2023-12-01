@@ -1,0 +1,9 @@
+{
+    "components": ["MO", "SN", "TI", "VA"],
+    "phases": {
+           "BCC_A2": {
+              "sublattice_model": [["MO", "SN", "TI"], ["VA"]],
+              "sublattice_site_ratios": [1, 3]
+           }
+      }
+  }
