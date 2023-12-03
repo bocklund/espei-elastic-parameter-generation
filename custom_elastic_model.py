@@ -27,25 +27,25 @@ class ElasticModel(Model):
             setattr(self, prop, prop_val)
 
 # Now define the fitting steps.
-# AbstractRKMPropertyStep is a base class to use for properties that use
+# AbstractLinearPropertyStep is a base class to use for properties that use
 # standard Redlich-Kister-Muggianu mixing. It works best and is easiest to use
 # when you have data that map 1:1 with PyCalphad model parameters.
 # By default, the features use a power expansion in temperature as a sum of
 # coefficients corresponding to the variables [1, T, T^2, T^3, T^(-1)].
 from espei.parameter_selection.fitting_descriptions import ModelFittingDescription
-from espei.parameter_selection.fitting_steps import AbstractRKMPropertyStep
+from espei.parameter_selection.fitting_steps import AbstractLinearPropertyStep
 
 # In this case, we are happy with the features and don't need to override them,
 # so we just can set the parameter and data type class variables.
-class StepElasticC11(AbstractRKMPropertyStep):
+class StepElasticC11(AbstractLinearPropertyStep):
     parameter_name = "C11"
     data_types_read = "C11"
 
-class StepElasticC12(AbstractRKMPropertyStep):
+class StepElasticC12(AbstractLinearPropertyStep):
     parameter_name = "C12"
     data_types_read = "C12"
 
-class StepElasticC44(AbstractRKMPropertyStep):
+class StepElasticC44(AbstractLinearPropertyStep):
     parameter_name = "C44"
     data_types_read = "C44"
 
